@@ -429,7 +429,7 @@ print(f"Test:\t{len(test_set)}")
 
 # %% Create dataloaders [code]
 batch_size = 128
-num_workers = 2
+num_workers = 1 # We are using a single worker, but you can increase this for faster data loading
 
 train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers)
 valid_loader = DataLoader(valid_set, batch_size=batch_size, shuffle=False, num_workers=num_workers)

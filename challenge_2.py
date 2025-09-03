@@ -57,8 +57,8 @@
 # ----
 
 # %% Install dependencies on colab [code] tags=["hide-input"]
-!pip install braindecode
-!pip install eegdash
+#!pip install braindecode
+#!pip install eegdash
 
 # %% Imports [code] tags=["hide-input"]
 from pathlib import Path
@@ -120,7 +120,7 @@ print(msg)
 
 # %%
 # The first step is to define the cache folder!
-DATA_DIR = Path("data")
+DATA_DIR = Path("~/mne_data/eeg2025_competition")
 
 # Creating the path if it does not exist
 DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -242,6 +242,7 @@ all_datasets = BaseConcatDataset(
         for ds in all_datasets.datasets
         if not ds.description.subject in sub_rm
         and ds.raw.n_times >= 4 * SFREQ
+        and len(ds.raw.ch_names) == 129
         and not math.isnan(ds.description["p_factor"])
     ]
 )

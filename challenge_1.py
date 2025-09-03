@@ -437,6 +437,7 @@ test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_wor
 
 # %% Build the model [code]
 # For any braindecode model, you can initialize only inputing the signal related parameters
+# You can use any Pytorch module that you want here.
 model = EEGNeX(
     n_chans=129,      # 129 channels
     n_outputs=1,      # 1 output for regression

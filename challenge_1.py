@@ -446,6 +446,7 @@ model = EEGNeX(
 )
 
 print(model)
+model.to(device)
 
 # %% Define training functions [code]
 def train_one_epoch(

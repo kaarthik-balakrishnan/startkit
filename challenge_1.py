@@ -594,5 +594,5 @@ if best_state is not None:
     model.load_state_dict(best_state)
 
 # %% Save the model [code]
-torch.save(model.state_dict(), "model_challenge_1.pth")
-print("Model saved as 'model_challenge_1.pth'")
+torch.save(model.state_dict(), "weights_challenge_1.pt")
+print("Model saved as 'weights_challenge_1.pt'")

@@ -318,4 +318,5 @@ for epoch in range(n_epochs):
         optimizer.step()
 
 # Finally, we can save the model for later use
-torch.save(model.state_dict(), "model_weights_challenge_2.pt")
+torch.save(model.state_dict(), "weights_challenge_2.pt")
+print("Model saved as 'weights_challenge_2.pt'")

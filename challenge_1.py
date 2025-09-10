@@ -177,6 +177,9 @@ test_frac = 0.1
 seed = 2025
 
 subjects = meta_information["subject"].unique()
+sub_rm = ["NDARWV769JM7", "NDARME789TD2", "NDARUA442ZVF", "NDARJP304NK1",
+          "NDARTY128YLU", "NDARDW550GU6", "NDARLD243KRE", "NDARUJ292JXV", "NDARBA381JGH"]
+subjects = [s for s in subjects if s not in sub_rm]
 
 train_subj, valid_test_subject = train_test_split(
     subjects, test_size=(valid_frac + test_frac), random_state=check_random_state(seed), shuffle=True
